@@ -1,7 +1,7 @@
 exports.HomeController = {
     index() {
         return {
-            name: 'Tiksi'
+            name: 'tiksi'
         };
     }
 };
