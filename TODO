@@ -6,10 +6,10 @@ Todo:
   ✔ give possibilty 404 error handling @done(19-10-22 22:09)
   ✔ create organization github @done(19-10-24 11:27)
   ✔ show error, handle errors @done(19-10-24 17:11)
+  ✔ test rpc @done(19-10-24 17:27)
   ☐ write documentation
   ☐ authentification system
   ☐ logo for the organization
   ☐ rpc in readme md
   ☐ say for size to remove readme and pictures (see create clean command)
-  ☐ test rpc
   ☐ create clean command -> remove all github file + UNDO

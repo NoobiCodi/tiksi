@@ -5,6 +5,11 @@ const csl = require('./tools/console');
 const { color } = require('./tools/color');
 const { Twig } = require("./template/twigImpl");
 
+/**
+ * import the server file (USER)
+ */
+require('./../../server/server');
+
 const server = http.createServer();
 
 csl.printServer(`Server starting ...`, color.BgGreen + color.FgBlack);
