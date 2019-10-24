@@ -5,11 +5,6 @@ const csl = require('./tools/console');
 const { color } = require('./tools/color');
 const { Twig } = require("./template/twigImpl");
 
-/**
- * import the server file (USER)
- */
-require('./../../server/server');
-
 const server = http.createServer();
 
 csl.printServer(`Server starting ...`, color.BgGreen + color.FgBlack);
@@ -31,3 +26,8 @@ const port = config.port;
 server.listen(port);
 
 csl.printServer(`${color.FgCyan}Server listening to port ${color.FgGreen}${port}${color.FgCyan}, http://localhost:${port}/${color.Reset}`);
+
+/**
+ * import the server file (USER)
+ */
+require('./../../server/server');
