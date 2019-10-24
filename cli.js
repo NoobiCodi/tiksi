@@ -58,9 +58,6 @@ function clean() {
       fs.unlinkSync(el);
     }
   }
-
-  fs.rmdirSync('./src/github/images');
-  fs.rmdirSync('./src/github');
 }
 
 function defaultControllerData(name) {
