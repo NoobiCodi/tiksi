@@ -8,12 +8,33 @@ const { getAllMethods } = require('./tools/methodInstance');
 const { jsonContent } = require("./template/routing");
 
 function loadControllerView(instance, twig, res) {
-    const controllSplit = jsonContent[instance].controller.split(".");
-    const controllerRequire = require('./../../controllers/' + controllSplit[0]);
+    let controllSplit;
+    let controllerRequire;
+
+    try {
+        controllSplit = jsonContent[instance].controller.split(".");
+    } catch (e) {
+        csl.printServer(`FATAL ERROR: No controller defined, route: ${instance}`, color.FgRed);
+        return;
+    }
+    
+    try {
+        controllerRequire = require('./../../controllers/' + controllSplit[0]);
+    } catch (e) {
+        csl.printServer(`FATAL ERROR: Undefined controller ${controllSplit[0]}, route: ${instance}`, color.FgRed);
+        return;
+    }
 
     const theController = controllerRequire[controllSplit[0]];
 
-    const data = theController[controllSplit[1]]();
+    let data;
+
+    try {
+        data = theController[controllSplit[1]]();
+    } catch (e) {
+        csl.printServer(`FATAL ERROR: Undefined function ${controllSplit[1]}, route: ${instance}`, color.FgRed);
+        return;
+    }
 
     twig.renderFile(path.join(__dirname, `/../../views/${jsonContent[instance].view}.twig`), data, (err, html) => {
         res.end(html);

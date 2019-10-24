@@ -26,9 +26,3 @@ const port = config.port;
 server.listen(port);
 
 csl.printServer(`${color.FgCyan}Server listening to port ${color.FgGreen}${port}${color.FgCyan}, http://localhost:${port}/${color.Reset}`);
-
-const auth = require('./auth/auth');
-
-auth.getCryptedPassword('banana').then((hash) => {
-    auth.comparePassword('banana', hash).then(/*console.log*/);
-});
