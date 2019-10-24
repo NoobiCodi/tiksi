@@ -7,9 +7,10 @@ Todo:
   ✔ create organization github @done(19-10-24 11:27)
   ✔ show error, handle errors @done(19-10-24 17:11)
   ✔ test rpc @done(19-10-24 17:27)
+  ✔ create clean command -> remove all github file + UNDO @done(19-10-24 22:39)
+  ✔ say for size to remove readme and pictures (see create clean command) @done(19-10-24 22:39)
+  
   ☐ write documentation
   ☐ authentification system
   ☐ logo for the organization
-  ☐ rpc in readme md
-  ☐ say for size to remove readme and pictures (see create clean command)
-  ☐ create clean command -> remove all github file + UNDO
+  ☐ rpc in wiki
