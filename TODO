@@ -1,0 +1,11 @@
+Todo:
+  ✔ Controller function : HomeController.home (see './test/todo/controller.js') @done(19-10-22 10:23)
+  ✔ './tiksi.sh' to './tiksi.js' @done(19-10-22 11:03)
+  ✔ rename tiksi js to cli @done(19-10-22 12:52)
+  ✔ make controller cli -> create command @done(19-10-22 14:09)
+  ✔ give possibilty 404 error handling @done(19-10-22 22:09)
+  ☐ show error, handle errors
+  ☐ create organization github
+  ☐ write documentation
+  ☐ authentification system
+  ☐ logo for the organization

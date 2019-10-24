@@ -1,0 +1,7 @@
+{
+    "home": {
+        "path": "/",
+        "controller": "HomeController.index",
+        "view": "HomeView"
+    }
+}
