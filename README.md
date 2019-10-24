@@ -40,3 +40,43 @@ Server listening to port 8000, http://localhost:8000/
 
 <p><a href="http://localhost:8000/ ">http://localhost:8000/ </a> : </p>
 <img width=500 align=center src="./src/github/images/helloworld.png" alt="">
+<h2>Why do you see <code>Hello tiksi !</code> ?</h2>
+<p>Because when the router receive "/", in the file <code>routes.json</code>, it is defined that he must display the HomeController.index :</p>
+
+```json
+{
+    "home": {
+        "path": "/",
+        "controller": "HomeController.index",
+        "view": "HomeView"
+    }
+}
+```
+
+<p>Where is the HomeController.index ?</p>
+<p>Just here, in <code>controllers/HomeController.js</code> :</p>
+
+```javascript
+exports.HomeController = {
+    index() {
+        return {
+            name: 'tiksi'
+        };
+    }
+};
+```
+
+<p>Here, we say that when the server call the function <code>index()</code>, he get the data </p>
+
+```javascript
+name: 'tiksi'
+```
+
+<p>Wait, where is the Hello in front of tiksi ?!</p>
+<p>The hello is a member of the view : he is just here for diplay, so it's defined in the <code>views/HomeView :</code></p>
+
+```twig
+Hello {{ name }} ! Welcome to the HomeView view.
+```
+
+<p>Voila ! You have now a server running on tiksi based on mvc structure !</p>
