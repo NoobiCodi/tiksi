@@ -16,7 +16,7 @@ const color = {
 
 const commands = {
   help: {
-    cmd: '-h||--help',
+    cmd: 'h||help',
     info: 'Get the help (list of commands)',
     func: help
   },
@@ -34,8 +34,34 @@ const commands = {
     cmd: 'create',
     info: 'Create something',
     func: create
+  },
+  clean: {
+    cmd: 'clean',
+    info: 'Clean file that you won\'t use.',
+    func: clean
   }
 };
+
+function clean() {
+  const filesToClean = [
+    './src/github/images/helloworld.png',
+    './src/github/images/readmeMain.png',
+    './LICENSE.md',
+    './CODE_OF_CONDUCT.md'
+  ];
+
+  for (let i = 0; i < filesToClean.length; i++) {
+    const el = filesToClean[i];
+    
+    if (fs.existsSync(el)) {
+      print(`${setColor(color.red)}Removed file ${el}`);
+      fs.unlinkSync(el);
+    }
+  }
+
+  fs.rmdirSync('./src/github/images');
+  fs.rmdirSync('./src/github');
+}
 
 function defaultControllerData(name) {
   return `exports.${name} = {
