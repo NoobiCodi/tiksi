@@ -3,7 +3,15 @@ const {
     comparePassword
 } = require('./password');
 
+const {
+    session,
+    sessionRoute
+} = require ('./sessions');
+
 module.exports = {
     getCryptedPassword,
-    comparePassword
+    comparePassword,
+
+    session,
+    sessionRoute
 };

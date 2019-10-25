@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { getAllMethods } = require('./tools/methodInstance');
 const { jsonContent } = require("./template/routing");
+const auth = require('./auth/auth');
 
 function loadControllerView(instance, twig, res) {
     let controllSplit;
@@ -42,6 +43,11 @@ function loadControllerView(instance, twig, res) {
 }
 
 exports.router = (req, res, twig) => {
+    /**
+     * session
+     */
+    auth.sessionRoute(req, res);
+
     /**
      * get url and method
      */

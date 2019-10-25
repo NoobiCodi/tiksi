@@ -80,5 +80,6 @@ Hello {{ name }} ! Welcome to the HomeView view.
 ```
 
 <p>The views are defined in twig. In twig, to display a variable, you must do <code>{{ variable name }}</code></p>
-
 <p>Voila ! You have now a server running on tiksi based on mvc structure !</p>
+<h2>What's next ?</h2>
+<p>Go to Wiki tab andd read about the backend (RPC system ) or about the proxy and enjoy !</p>
