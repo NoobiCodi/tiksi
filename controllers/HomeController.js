@@ -1,5 +1,5 @@
 exports.HomeController = {
-    index() {
+    index(args) {
         return {
             name: 'tiksi'
         };

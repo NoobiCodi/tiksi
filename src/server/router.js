@@ -4,11 +4,12 @@ const { color } = require('./tools/color');
 const { RemoteInvoker } = require('./api/remoteInvoker');
 const fs = require('fs');
 const path = require('path');
+const urlNode = require('url');
 const { getAllMethods } = require('./tools/methodInstance');
 const { jsonContent } = require("./template/routing");
 const auth = require('./auth/auth');
 
-function loadControllerView(instance, twig, res) {
+function loadControllerView(instance, twig, res, param) {
     let controllSplit;
     let controllerRequire;
 
@@ -31,7 +32,7 @@ function loadControllerView(instance, twig, res) {
     let data;
 
     try {
-        data = theController[controllSplit[1]]();
+        data = theController[controllSplit[1]](param);
     } catch (e) {
         csl.printServer(`FATAL ERROR: Undefined function ${controllSplit[1]}, route: ${instance}`, color.FgRed);
         return;
@@ -51,7 +52,8 @@ exports.router = (req, res, twig) => {
     /**
      * get url and method
      */
-    const url = req.url;
+    const url = urlNode.parse(req.url).pathname;
+    const param = urlNode.parse(req.url).query;
     const method = req.method;
 
     csl.printServer(`Handle request ${url} with method ${method}`);
@@ -100,7 +102,7 @@ exports.router = (req, res, twig) => {
             }
 
             if (jsonContent[instance].path == url) {
-                loadControllerView(instance, twig, res);
+                loadControllerView(instance, twig, res, param);
                 return;
             }
         }

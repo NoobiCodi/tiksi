@@ -12,6 +12,6 @@ module.exports = {
     getCryptedPassword,
     comparePassword,
 
-    session,
+    // session,
     sessionRoute
 };
