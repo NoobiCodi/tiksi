@@ -5,8 +5,8 @@
     <img align=center src="https://img.shields.io/badge/language-javascript-yellow?style=flat" alt="">
 </p>
 <p align=center>
-    <img align=center src="https://img.shields.io/github/stars/TiksiJS/tiksi?style=flat" alt="">
-    <img align=center src="https://img.shields.io/github/forks/TiksiJS/tiksi?style=flat" alt="">
+    <img align=center src="https://img.shields.io/github/stars/NoobiCodi/tiksi?style=flat" alt="">
+    <img align=center src="https://img.shields.io/github/forks/NoobiCodi/tiksi?style=flat" alt="">
 </p>
 <hr>
 <img align=center src="./src/github/images/readmeMain.png" alt="">
